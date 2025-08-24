@@ -1,131 +1,153 @@
-/* Reset väike alguses */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* --- General layout --- */
 body {
   font-family: 'Montserrat', sans-serif;
   display: flex;
   height: 100vh;
+  margin: 0;
 }
 
-/* Container jagab kaheks pooleks */
 .container {
   display: flex;
   flex: 1;
 }
 
-/* Sidebar as background image */
+/* --- Sidebar --- */
 .sidebar {
-  flex: 1;
+  flex: 1.5;
   background: url('stefan-stefancik-unsplash.jpg') center/cover no-repeat;
   position: relative;
-  color: white;
-
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* kõik liigub alla */
+  justify-content: space-between; /* logo üles, credit alla */
+  align-items: center;
   padding: 20px;
 }
 
-/* Logo container */
+/* Logo keskele üles */
 .logo-container {
+  margin-top: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
-  background: rgba(0, 0, 0, 0.5); /* tumedam kast, et logo paistaks */
-  padding: 10px 15px;
-  border-radius: 8px;
-  max-width: fit-content;
-  margin-bottom: 40px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 12px 20px;
+  border-radius: 10px;
 }
 
 .logo {
-  width: 50px;  /* logo suurus */
+  width: 40px;
   height: auto;
 }
 
 .logo-container h1 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin: 0;
+  color: white;
 }
 
-/* Photo credit */
+/* Credit alla keskele */
 .credit {
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.8);
-  position: absolute;
-  bottom: 8px;
-  left: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.75rem;
 }
 
-
-/* Parem pool */
+/* --- Form section (card style) --- */
 .form-section {
-  flex: 1.2;
-  padding: 50px;
-  background: #f7f7f7;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3f4f6; /* hele hall taust */
 }
 
+.form-card {
+  background: white;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Intro */
 .intro {
-  margin-bottom: 30px;
-  font-size: 1.1rem;
+  margin-bottom: 25px;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #374151;
 }
 
+/* --- Form grid --- */
 .signup-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 20px 25px;
+  align-items: start;
 }
 
-.form-row {
-  display: flex;
-  flex-direction: column;
+.signup-form h2 {
+  grid-column: 1 / span 2;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
 }
 
-label {
-  font-size: 0.8rem;
-  margin-bottom: 5px;
+/* Labels */
+.signup-form label {
+  font-size: 0.75rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  color: #374151;
+  margin-bottom: 6px;
 }
 
-input {
-  padding: 8px;
+/* Inputs */
+.signup-form input {
+  padding: 14px 12px;
   border: 1px solid #e5e7eb;
-  border-radius: 5px;
-}
-
-/* invalid */
-input:invalid {
-  border-color: red;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  width: 100%;
+  background: #fff;
 }
 
 /* focus */
-input:focus {
+.signup-form input:focus {
   border-color: #2563eb;
-  box-shadow: 0 0 3px #2563eb;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
   outline: none;
 }
 
+/* invalid */
+.signup-form input:invalid {
+  border-color: #ef4444;
+}
+
+/* Button */
 .create-account {
   grid-column: 1 / span 2;
-  padding: 12px;
+  margin-top: 10px;
+  padding: 14px;
   background: #596d48;
   color: white;
   border: none;
-  border-radius: 5px;
-  font-weight: bold;
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
 .create-account:hover {
   background: #4a5d3d;
+  transform: translateY(-1px);
 }
 
 .login-text {
   margin-top: 20px;
   font-size: 0.9rem;
+  color: #374151;
+  text-align: center;
 }
