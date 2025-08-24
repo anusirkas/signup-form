@@ -3,10 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign-up Form</title>
+  <title>NomadHub - Sign Up</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello Odin! Let´s do this!</h1>
+    <div class="container">
+    <!-- Left side: pic + logo -->
+    <div class="sidebar">
+        <div class="logo-container">
+        <img src="odin-lined.png" alt="Odin logo" class="logo">
+        <h1>NomadHub</h1>
+        </div>
+        <p class="credit">Photo by Štefan Štefančík on Unsplash</p>
+    </div>
+
+    <!-- Right side: form -->
+    <div class="form-section">
+      <div class="intro">
+        <p>
+          This is not a real service! But imagine it is: a place where digital nomads
+          connect, share adventures, and find their next destination. 
+          Sign up <em>now</em> to join!
+        </p>
+      </div>
+
+      <form action="#" method="post" class="signup-form">
+        <h2>Let’s do this!</h2>
+        <div class="form-row">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="first-name" required>
+        </div>
+        <div class="form-row">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" name="last-name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-row">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-row">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+        <button type="submit" class="create-account">Create Account</button>
+      </form>
+      <p class="login-text">Already have an account? <a href="#">Log in</a></p>
+    </div>
+  </div>
 </body>
 </html>
